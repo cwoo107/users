@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Signup</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+      <style type="text/css">#logo{padding-top: 15px !important;}</style>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" id="logo">
+      <a  href="http://jonyetter.com/websites/USANorth811/california.html">
+        <%= image_tag("usanorth1.png", :width => "185", :class => "center-block", :alt => "Responsive image") %>
+        
+      </a>
+    </nav>
+    <h3 class="text-center" id="notice"><%= notice %></h3>
+    <div class="jumbotron">
+      <style type="text/css">
+        .jumbotron { background: #2b2d35 !important; } 
+
+      </style>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-2">
+          </div>
+          <div class="col-md-8">
+            <div class="embed-responsive embed-responsive-16by9 center-block">
+              <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/6VYjVahBejw?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div> 
+    
+
+    <%= yield %>
+
+  </body>
+      <style type="text/css">  .navbar-dark {background: #40444f !important;margin-bottom: 0px !important; border: white !important; border-radius: 0px !important;} .text-white{color:white !important;} #bottom-logo{ margin-top: -40px !important; }</style>
+<nav class="navbar sticky-bottom navbar-dark">
+  <div class="container">
+  <div class="text-center" id='bottom-logo'>
+    <%= image_tag("811-logo.svg", :width => "95") %>
+  </div>
+    <div class="row text-center ">
+      <h4 class="text-white">USA NORTH 811</h4>
+    </div>
+
+  <div class="row text-center text-white">
+    <h6>Phone: 811 Fax: (925) 798-9506</h6>
+  </div>
+
+  <div class="row text-center text-white">
+    <h6>4005 Port Chicago Hwy, Suite 100 Concord, CA 94520-1122</h6>
+  </div>
+
+  <div class="row"> pad
+  </div>
+</div>
+</nav>
+</html>
