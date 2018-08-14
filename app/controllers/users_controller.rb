@@ -28,8 +28,13 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.valid?
+        require "uri"
+        require "net/http"
 
-        format.html { redirect_to users_url_, notice: 'Congratulations on successfully signing up for E-tickets!' }
+        params = {'Type' => "new", 'Key' => "KSIEBNND93272JNS892MJK", 'User' => @user.user_name, 'Pass' =>@user.password, 'FName' => @user.first_name, 'LName' => @user.last_name, 'Comp' => @user.company_name, 'Add1' => @user.company_mailing_address, 'City' => @user.city, 'State' => @user.state, 'Zip' => @user.zip, 'Email' =>@user.email, 'Phone' => @user.company_phone_number, 'IsMember' => 'False', 'App' => 'users', 'Ver' => '1'}
+        x= Net::HTTP.post_form(URI.parse('https://jas.usanorth811.org:10443/addnewtinuser'), params)
+        puts x.body
+        format.html { redirect_to users_url, notice: 'Congratulations on successfully signing up for E-tickets!' }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }
